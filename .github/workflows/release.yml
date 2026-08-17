@@ -1,13 +1,14 @@
 name: Release pet package
 
-# The workflow is manual: it builds the pet from the tag you name and leaves a
-# draft release behind, so nothing is published until you look it over.
+# The workflow is manual and stops at a draft: it builds the pet from the
+# current commit and opens a release you can edit. No tag is needed up front --
+# GitHub creates it from this commit at the moment you press Publish.
 on:
   workflow_dispatch:
     inputs:
-      tag:
-        description: The tag to build the release from
-        required: true
+      version:
+        description: Version to release (defaults to the topmost one in CHANGELOG.md)
+        required: false
 
 permissions:
   contents: write
@@ -16,13 +17,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
-    env:
-      TAG: ${{ inputs.tag }}
-
     steps:
       - uses: actions/checkout@v7
-        with:
-          ref: ${{ inputs.tag }}
 
       - uses: actions/setup-python@v7
         with:
@@ -32,12 +28,33 @@ jobs:
         run: python -m pip install --upgrade pip Pillow
 
       # A release nobody can read the notes of is a release worth stopping.
-      - name: Check the tag against the changelog
+      - name: Read the version from the changelog
+        env:
+          VERSION: ${{ inputs.version }}
         run: |
-          if ! grep -qE "^## +$TAG( |$)" CHANGELOG.md; then
-            echo "CHANGELOG.md has no section for the tag ($TAG)." >&2
+          if [ -z "$VERSION" ]; then
+            VERSION="$(sed -n 's/^## *\([^ ]*\).*/\1/p' CHANGELOG.md | head -n 1)"
+          fi
+
+          if ! grep -qE "^## +$VERSION( |$)" CHANGELOG.md; then
+            echo "CHANGELOG.md has no section for $VERSION." >&2
             exit 1
           fi
+
+          echo "Releasing $VERSION"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      # The draft opens with the changelog section already in it, so editing the
+      # notes means editing prose rather than writing it from scratch.
+      - name: Collect the release notes
+        run: |
+          awk -v version="$VERSION" '
+            $0 ~ "^## +" version "( |$)" { collecting = 1; next }
+            collecting && /^## / { exit }
+            collecting { print }
+          ' CHANGELOG.md > notes.md
+
+          cat notes.md
 
       # Rebuilds the atlas from src/miku/ and re-runs the palette, alpha and
       # geometry checks; a failed validation fails the job.
@@ -56,11 +73,13 @@ jobs:
           (cd build/package && zip -r ../../miku-codex-pet.zip miku)
           unzip -l miku-codex-pet.zip
 
-      - name: Create release
+      - name: Create the draft release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "$TAG" \
-            --title="$TAG" \
+          gh release create "$VERSION" \
+            --title="$VERSION" \
             --draft \
+            --target "$GITHUB_SHA" \
+            --notes-file notes.md \
             miku-codex-pet.zip
