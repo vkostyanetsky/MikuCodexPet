@@ -1,4 +1,4 @@
-# Miku — a native Codex custom pet
+# Miku — a native Codex custom pet 🎤 💚 🐾
 
 [README in Russian](README.ru.md)
 
@@ -8,16 +8,16 @@ A Codex/ChatGPT desktop custom pet built from the original pixel-art Hatsune Mik
 
 This is not a port of the MikuPet application. There is no Python runtime, no Tkinter, no `MikuPet.exe`, no overlay and no window tracking. Codex owns the floating pet and its activity states; this repository only converts MikuPet's sprite assets into the atlas format Codex expects.
 
-## Build
+## 🔨 Build
 
 ```bash
 pip install Pillow
 python tools/build_codex_pet.py
 ```
 
-Pillow is a build-time tool only. It is not a requirement of the source project (whose runtime is not reproduced here — only its PNG/JSON assets are) and not a requirement of Codex, which consumes `dist/miku/` as plain data and never runs Python. Everything in `dist/` is already built, so installing the pet needs no dependencies at all — you only need Pillow if you want to rebuild the atlas from the sprites, which is also the only way to re-run the palette, alpha and geometry checks under [Validation](#validation).
+Pillow is a build-time tool only. It is not a requirement of the source project (whose runtime is not reproduced here — only its PNG/JSON assets are) and not a requirement of Codex, which consumes `dist/miku/` as plain data and never runs Python. Everything in `dist/` is already built, so installing the pet needs no dependencies at all — you only need Pillow if you want to rebuild the atlas from the sprites, which is also the only way to re-run the palette, alpha and geometry checks under [Validation](#-validation).
 
-## Output
+## 📦 Output
 
 | File | Purpose |
 | --- | --- |
@@ -28,7 +28,7 @@ Pillow is a build-time tool only. It is not a requirement of the source project 
 | `dist/preview/*.gif` | Debug-only motion previews (Codex does not use these) |
 | `dist/build-report.json` | Frame mapping, per-cell placement, validation record |
 
-## Codex format
+## 📐 Codex format
 
 ```text
 spriteVersionNumber: 2
@@ -46,7 +46,7 @@ Rows 0-8 are the standard animation states, rows 9-10 are the 16 clockwise look 
 
 A v1 sheet (`1536 × 1872`, rows 0-8 only) is also produced because the **web** upload flow documented at <https://learn.chatgpt.com/docs/pets> still asks for exactly 1536 × 1872. `spriteVersionNumber: 2` is mandatory for the 2288-tall sheet; without it the app falls back to the v1 contract and rejects the asset.
 
-## Install
+## 💾 Install
 
 **Desktop app (recommended, v2):**
 
@@ -66,7 +66,7 @@ Then in Codex: refresh the pet list, pick **Miku**, and use `/pet` to summon the
 
 **Web (v1):** Settings → Personalization → Pet → Upload pet, and upload `dist/miku_codex_pet_v1.png`.
 
-## Animation mapping
+## 🎞️ Animation mapping
 
 Every cell comes from a real MikuPet frame — cropped, integer-scaled with nearest-neighbour, padded and rearranged. Nothing was repainted or generated.
 
@@ -91,13 +91,13 @@ How that lines up with the Codex activity states:
 - **Blocked** → `failed` (row 5) — eyes shut, slumped.
 - **Reduced motion** → row 0 column 0, a neutral front-facing idle frame.
 
-## Geometry
+## 📏 Geometry
 
 - Uniform 3× nearest-neighbour integer scale for every state (64 × 100 source cells; Miku ends up 189–192 px tall, matching the ~198 px of the built-in Codex pets). 4× would overflow the 192 px cell.
 - Every frame of an animation is cropped to the animation's *shared* bounding box, so the registration the original artist authored is preserved and no state jitters horizontally.
 - All states sit on a single baseline (`y = 202`); the only deviations are the deliberate jump lift and the `failed` slump.
 
-## Validation
+## ✅ Validation
 
 `tools/build_codex_pet.py` fails the build unless:
 
@@ -113,13 +113,13 @@ The output was additionally checked with Codex's own validator:
 python ~/.codex/skills/hatch-pet/scripts/validate_atlas.py dist/miku/spritesheet.webp --require-v2
 ```
 
-## Known limitations
+## ⚠️ Known limitations
 
 - MikuPet's `dragging` animation is not used. Its flailing pose is 84 px wide in the source, which becomes 252 px at the uniform 3× scale and cannot fit a 192 px cell without cropping her hair or breaking the single-scale rule.
 - The source set has no upward or downward facing art, so look directions `000` (up) and `180` (down) both fall back to front-facing idle frames, distinguished only by eye state. The left/right cardinals are unmistakable.
 - `waving` and `waiting` both draw on the open-mouth idle frames; they differ in timing and bob, not in pose.
 
-## Licence and credits
+## 📜 Licence and credits
 
 | What | Terms |
 | --- | --- |
