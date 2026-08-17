@@ -1,0 +1,26 @@
+Miku -- an unofficial, fan-made custom pet for Codex
+https://github.com/vkostyanetsky/MikuCodexPet
+
+Character artwork
+  BYP Studio and Chaim Videogames, created for "Miku 'n Pop".
+  Obtained through The Spriters Resource / The VG Resource.
+  The artwork is NOT covered by this project's GPL-3.0 licence; all rights
+  remain with its authors. Chaim Vester has publicly allowed reuse of these
+  sprites provided credit is given (itch.io, 2026-02-19):
+  https://chaim-videogames.itch.io/mikun-pop#post-15508543
+
+Sprite source project
+  CharlesWiiFlowers/MikuPet (GPL-3.0)
+  https://github.com/CharlesWiiFlowers/MikuPet
+  The frames in this pet were cropped, integer-scaled with nearest-neighbour,
+  padded and rearranged from that project's assets in August 2026. Nothing was
+  repainted or generated.
+
+Character
+  Hatsune Miku (C) Crypton Future Media, INC. www.piapro.net
+  Used non-commercially in the spirit of Crypton's piapro character guidelines.
+
+Not affiliated with, endorsed by or sponsored by Crypton Future Media,
+BYP Studio, Chaim Videogames, the MikuPet author or OpenAI. Non-commercial
+fan work, distributed free of charge. Rights holders may request removal
+via https://github.com/vkostyanetsky/MikuCodexPet/issues.

@@ -1,0 +1,7 @@
+{
+  "id": "miku",
+  "displayName": "Miku",
+  "description": "A pixel-art Hatsune Miku who idles, walks and sings along while Codex works.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp"
+}
