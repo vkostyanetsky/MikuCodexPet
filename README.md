@@ -78,12 +78,12 @@ Every cell comes from a real MikuPet frame — cropped, integer-scaled with near
 | 1 | `running-right` | `walk_right` 0-1-2-1-0-1-2-1 | Real right-facing art; nothing mirrored. |
 | 2 | `running-left` | `walk_left` 0-1-2-1-0-1-2-1 | Real left-facing art; nothing mirrored. |
 | 3 | `waving` | `idle` 15, 16, 17, 16 | The open-mouth "singing" beat of the idle loop. |
-| 4 | `jumping` | `walk_right` 0-1-2-1-0 | Mid-stride poses lifted 5–8 px off the baseline. |
+| 4 | `jumping` | `walk_right` 0-1-2-1-0 | Mid-stride poses lifted 5-8 px off the baseline. |
 | 5 | `failed` | `idle` 13, 12 | Eyes squeeze shut and Miku sinks a few pixels. |
 | 6 | `waiting` | `idle` 15, 16, 17, 16, 15, 10 | Mouth wide open with a small bob — "asking". |
 | 7 | `running` | `walk_right` 0-1-2-0-1-2 | Tight walk cycle. |
 | 8 | `review` | `idle` 0, `walk_left` 1, `idle` 11, `walk_right` 1 | Miku looks the work over, left then right. |
-| 9–10 | look directions | `walk_right` / `walk_left` / `idle` | Right-component directions face right, left-component face left, `000`/`180` fall back to front-facing idle frames. |
+| 9-10 | look directions | `walk_right` / `walk_left` / `idle` | Right-component directions face right, left-component face left, `000`/`180` fall back to front-facing idle frames. |
 
 How that lines up with the Codex activity states:
 
@@ -95,7 +95,7 @@ How that lines up with the Codex activity states:
 
 ## 📏 Geometry
 
-- Uniform 3× nearest-neighbour integer scale for every state (64 × 100 source cells; Miku ends up 189–192 px tall, matching the ~198 px of the built-in Codex pets). 4× would overflow the 192 px cell.
+- Uniform 3× nearest-neighbour integer scale for every state (64 × 100 source cells; Miku ends up 189-192 px tall, matching the ~198 px of the built-in Codex pets). 4× would overflow the 192 px cell.
 - Every frame of an animation is cropped to the animation's *shared* bounding box, so the registration the original artist authored is preserved and no state jitters horizontally.
 - All states sit on a single baseline (`y = 202`); the only deviations are the deliberate jump lift and the `failed` slump.
 
