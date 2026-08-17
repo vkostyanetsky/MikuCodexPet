@@ -1,6 +1,6 @@
 # Attribution and rights
 
-*[ATTRIBUTION in Russian](ATTRIBUTION.ru.md)*
+[ATTRIBUTION in Russian](ATTRIBUTION.ru.md)
 
 This is an **unofficial, non-commercial fan project**. Different parts of it carry different rights, and they are deliberately kept separate: nothing here relicenses artwork that this project does not own.
 

@@ -1,6 +1,6 @@
 # Miku — a native Codex custom pet
 
-*[README in Russian](README.ru.md)*
+[README in Russian](README.ru.md)
 
 A Codex/ChatGPT desktop **custom pet** built from the original pixel-art Hatsune Miku sprites of [CharlesWiiFlowers/MikuPet](https://github.com/CharlesWiiFlowers/MikuPet).
 

@@ -1,6 +1,6 @@
 # Miku — нативный кастомный питомец для Codex
 
-*[README in English](README.md)*
+[README in English](README.md)
 
 **Кастомный питомец** (custom pet) для десктопного Codex/ChatGPT, собранный из оригинальных пиксель-арт спрайтов Хацунэ Мику из проекта [CharlesWiiFlowers/MikuPet](https://github.com/CharlesWiiFlowers/MikuPet).
 
