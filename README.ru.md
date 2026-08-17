@@ -4,7 +4,7 @@
 
 Кастомный питомец (custom pet) для десктопного Codex/ChatGPT, собранный из оригинальных пиксель-арт спрайтов Хацунэ Мику из проекта [CharlesWiiFlowers/MikuPet](https://github.com/CharlesWiiFlowers/MikuPet).
 
-![Miku](img/miku.png)
+<img src="img/miku.png" alt="Miku" width="278">
 
 > Неофициальный некоммерческий фанатский проект. Не аффилирован с Crypton Future Media, BYP Studio, Chaim Videogames, автором MikuPet и OpenAI и не одобрен ими. Арт персонажа не покрывается лицензией этого репозитория — см. [ATTRIBUTION.ru.md](ATTRIBUTION.ru.md).
 
