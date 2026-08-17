@@ -4,6 +4,8 @@
 
 Кастомный питомец (custom pet) для десктопного Codex/ChatGPT, собранный из оригинальных пиксель-арт спрайтов Хацунэ Мику из проекта [CharlesWiiFlowers/MikuPet](https://github.com/CharlesWiiFlowers/MikuPet).
 
+![Miku](img/miku.png)
+
 > Неофициальный некоммерческий фанатский проект. Не аффилирован с Crypton Future Media, BYP Studio, Chaim Videogames, автором MikuPet и OpenAI и не одобрен ими. Арт персонажа не покрывается лицензией этого репозитория — см. [ATTRIBUTION.ru.md](ATTRIBUTION.ru.md).
 
 Это не порт приложения MikuPet. Здесь нет ни Python-рантайма, ни Tkinter, ни `MikuPet.exe`, ни оверлея, ни отслеживания окон. Плавающим питомцем и его состояниями активности управляет сам Codex; этот репозиторий только конвертирует спрайты MikuPet в формат атласа, который ожидает Codex.

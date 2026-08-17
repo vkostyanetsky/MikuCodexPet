@@ -4,6 +4,8 @@
 
 A Codex/ChatGPT desktop custom pet built from the original pixel-art Hatsune Miku sprites of [CharlesWiiFlowers/MikuPet](https://github.com/CharlesWiiFlowers/MikuPet).
 
+![Miku](img/miku.png)
+
 > Unofficial, non-commercial fan project. Not affiliated with or endorsed by Crypton Future Media, BYP Studio, Chaim Videogames, the MikuPet author or OpenAI. The character artwork is not covered by this repository's licence — see [ATTRIBUTION.md](ATTRIBUTION.md).
 
 This is not a port of the MikuPet application. There is no Python runtime, no Tkinter, no `MikuPet.exe`, no overlay and no window tracking. Codex owns the floating pet and its activity states; this repository only converts MikuPet's sprite assets into the atlas format Codex expects.
