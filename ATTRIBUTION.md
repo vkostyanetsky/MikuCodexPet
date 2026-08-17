@@ -30,7 +30,7 @@ dragging.json   dragging.png
 
 **Statement of modification** (GPL-3.0 §5a). No MikuPet *source code* is included or reproduced here — there is no port of the application. The `.json` metadata files are unmodified. The accompanying PNG artwork was mechanically transformed in August 2026 by `tools/build_codex_pet.py` into the Codex sprite atlas found in `dist/`.
 
-**Scope.** GPL-3.0 covers the build tooling, the documentation and the MikuPet metadata files. It does **not** cover the character artwork: MikuPet itself credits that artwork to third parties, so the presence of a GPL-3.0 licence in that repository cannot be read as a GPL-3.0 grant over the sprites.
+**Scope.** GPL-3.0 covers the build tooling, the documentation and the MikuPet metadata files. It does not cover the character artwork: MikuPet itself credits that artwork to third parties, so the presence of a GPL-3.0 licence in that repository cannot be read as a GPL-3.0 grant over the sprites.
 
 ## Character artwork
 
@@ -46,7 +46,7 @@ No formal licence covers these sprites, and none is claimed here. They are reuse
 
 ### Permission stated by the artist
 
-On the official *Miku 'n Pop* page on itch.io, a user asked whether the game's sprites could be reused in a free project they intended to publish. Chaim Vester answered on 2026-02-19 that the sprites may be used — "You can use the Sprites if you like them" — noting that they are already available on The Spriters Resource, and asking that proper credit be given, because hardly anyone does ([permalink](https://chaim-videogames.itch.io/mikun-pop#post-15508543)).
+On the official Miku 'n Pop page on itch.io, a user asked whether the game's sprites could be reused in a free project they intended to publish. Chaim Vester answered on 2026-02-19 that the sprites may be used — "You can use the Sprites if you like them" — noting that they are already available on The Spriters Resource, and asking that proper credit be given, because hardly anyone does ([permalink](https://chaim-videogames.itch.io/mikun-pop#post-15508543)).
 
 This project follows that request: credit is given in the README, here, and inside the installable package itself. Two caveats are worth stating plainly rather than glossing over. It is an informal public statement, not a licence. And it comes from Chaim Vester alone, while the artwork is credited to BYP Studio *and* Chaim Videogames — so it does not speak for BYP Studio.
 
@@ -60,7 +60,7 @@ Crypton permits non-commercial derivative use of the character under its piapro 
 
 ## No affiliation, no commerce
 
-This project is not affiliated with, endorsed by or sponsored by Crypton Future Media, BYP Studio, Chaim Videogames, the MikuPet author, or OpenAI. *Codex*, *ChatGPT* and *OpenAI* are trademarks of OpenAI; *Hatsune Miku* is a trademark of Crypton Future Media. They are used here only to describe what this project is compatible with.
+This project is not affiliated with, endorsed by or sponsored by Crypton Future Media, BYP Studio, Chaim Videogames, the MikuPet author, or OpenAI. Codex, ChatGPT and OpenAI are trademarks of OpenAI; Hatsune Miku is a trademark of Crypton Future Media. They are used here only to describe what this project is compatible with.
 
 Nothing here is sold, and nothing here may be sold: commercial redistribution of the artwork or of the built atlases would need permission from the artwork's rights holders (and from Crypton), which this project does not have and cannot pass on.
 
@@ -74,7 +74,7 @@ Only mechanical operations — the character design was not altered and no art w
 
 - crop to frame rectangles read from the original JSON metadata
 - crop to the bounding box shared by all frames of an animation
-- integer 3× upscale using **nearest-neighbour** only
+- integer 3× upscale using nearest-neighbour only
 - transparent padding and repositioning inside 192 × 208 cells
 - reordering, subsetting and duplication of frames
 
