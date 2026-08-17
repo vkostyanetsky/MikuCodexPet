@@ -62,6 +62,8 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\pets\miku"; Copy-It
 
 Затем в Codex: обновите список питомцев, выберите **Miku** и вызовите `/pet`, чтобы призвать плавающего питомца.
 
+**Из архива:** [`.github/workflows/build-pet.yml`](.github/workflows/build-pet.yml) пересобирает атлас и публикует `miku-codex-pet.zip` — папку `miku/` с теми же тремя файлами. Распакуйте её в `~/.codex/pets/` (в Windows — `%USERPROFILE%\.codex\pets\`). Workflow запускается только вручную: стартуйте его на вкладке Actions и заберите архив из артефактов запуска — либо запустите на теге `v*`, и архив попадёт в ассеты соответствующего релиза.
+
 **Веб (v1):** Settings → Personalization → Pet → Upload pet, загрузить `dist/miku_codex_pet_v1.png`.
 
 ## Раскладка анимаций

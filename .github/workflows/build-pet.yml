@@ -1,0 +1,65 @@
+name: Build pet package
+
+# Manual only: run it from the Actions tab (or `gh workflow run build-pet.yml`).
+# Dispatching from a v* tag also attaches the zip to that tag's release.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # only used by the release step, which runs on tags
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: python -m pip install --upgrade pip Pillow
+
+      # Rebuilds the atlas from src/miku/ and re-runs the palette, alpha and
+      # geometry checks; a failed validation fails the job.
+      - name: Build atlas
+        run: python tools/build_codex_pet.py --dist-dir build/dist --skip-previews
+
+      # The zip must unpack into ~/.codex/pets/, so its root entry is the
+      # pet folder itself: miku/pet.json, miku/spritesheet.webp, miku/CREDITS.txt.
+      - name: Stage pet folder
+        run: |
+          mkdir -p build/package/miku
+          cp build/dist/miku/pet.json \
+             build/dist/miku/spritesheet.webp \
+             build/dist/miku/CREDITS.txt \
+             build/package/miku/
+          ls -l build/package/miku
+
+      - name: Create zip
+        run: cd build/package && zip -r ../../miku-codex-pet.zip miku
+
+      # Uploaded as the folder, not the zip: GitHub wraps artifacts in a zip of
+      # their own, so downloading this one already yields a miku/ folder rather
+      # than a zip inside a zip.
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: miku-codex-pet
+          path: build/package
+          if-no-files-found: error
+
+      - name: Attach zip to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            gh release upload "${GITHUB_REF_NAME}" miku-codex-pet.zip --clobber
+          else
+            gh release create "${GITHUB_REF_NAME}" miku-codex-pet.zip --generate-notes
+          fi

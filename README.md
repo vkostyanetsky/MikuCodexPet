@@ -62,6 +62,8 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\pets\miku"; Copy-It
 
 Then in Codex: refresh the pet list, pick **Miku**, and use `/pet` to summon the floating pet.
 
+**From the zip:** [`.github/workflows/build-pet.yml`](.github/workflows/build-pet.yml) rebuilds the atlas and publishes `miku-codex-pet.zip` — a `miku/` folder holding the same three files. Unpack it into `~/.codex/pets/` (`%USERPROFILE%\.codex\pets\` on Windows). The workflow runs on demand only: start it from the Actions tab and take the zip from the run's artifacts, or run it against a `v*` tag to attach the zip to that release.
+
 **Web (v1):** Settings → Personalization → Pet → Upload pet, and upload `dist/miku_codex_pet_v1.png`.
 
 ## Animation mapping
