@@ -1,4 +1,4 @@
-name: Release pet package
+name: Release pet
 
 # The workflow is manual and stops at a draft: it builds the pet from the
 # current commit and opens a release you can edit. No tag is needed up front --
