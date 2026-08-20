@@ -104,7 +104,7 @@ Miku -- an unofficial, fan-made custom pet for Codex
 https://github.com/vkostyanetsky/MikuCodexPet
 
 Character artwork
-  BYP Studio and Chaim Videogames, created for "Miku 'n Pop".
+  BYP Studio and Chaim Videogames, created for "Miku'n POP".
   Obtained through The Spriters Resource / The VG Resource.
   The artwork is NOT covered by this project's GPL-3.0 licence; all rights
   remain with its authors. Chaim Vester has publicly allowed reuse of these

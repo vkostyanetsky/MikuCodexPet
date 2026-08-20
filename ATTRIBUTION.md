@@ -10,7 +10,7 @@ This is an **unofficial, non-commercial fan project**. Different parts of it car
 | --- | --- | --- | --- |
 | Build tooling and documentation | `tools/`, `*.md` | Vlad Kostyanetsky (maintainer) | GPL-3.0 — see [LICENSE](LICENSE) |
 | MikuPet animation metadata | `src/miku/*.json` | Charles Flowers ([MikuPet](https://github.com/CharlesWiiFlowers/MikuPet)) | GPL-3.0, copied verbatim |
-| Character sprites | `src/miku/*.png` | BYP Studio and Chaim Videogames (*Miku 'n Pop*) | **Not GPL-3.0.** No licence is claimed or granted here; [reuse with credit was publicly allowed by the artist](#permission-stated-by-the-artist) |
+| Character sprites | `src/miku/*.png` | BYP Studio and Chaim Videogames (*Miku'n POP*) | **Not GPL-3.0.** No licence is claimed or granted here; [reuse with credit was publicly allowed by the artist](#permission-stated-by-the-artist) |
 | Built atlases and pet package | `dist/**` | derived from the sprites above | Same terms as the sprites |
 | The character herself | — | Crypton Future Media, INC. | Non-commercial use in the spirit of the piapro character guidelines |
 
@@ -37,7 +37,7 @@ dragging.json   dragging.png
 ```text
 Character assets:
 BYP Studio and Chaim Videogames
-Miku 'n Pop
+Miku'n POP
 Source: The Spriters Resource / The VG Resource
 https://www.spriters-resource.com/pc_computer/mikunpop/sheet/46493/
 ```
@@ -46,7 +46,7 @@ No formal licence covers these sprites, and none is claimed here. They are reuse
 
 ### Permission stated by the artist
 
-On the official Miku 'n Pop page on itch.io, a user asked whether the game's sprites could be reused in a free project they intended to publish. Chaim Vester answered on 2026-02-19 that the sprites may be used — "You can use the Sprites if you like them" — noting that they are already available on The Spriters Resource, and asking that proper credit be given, because hardly anyone does ([permalink](https://chaim-videogames.itch.io/mikun-pop#post-15508543)).
+On the official Miku'n POP page on itch.io, a user asked whether the game's sprites could be reused in a free project they intended to publish. Chaim Vester answered on 2026-02-19 that the sprites may be used — "You can use the Sprites if you like them" — noting that they are already available on The Spriters Resource, and asking that proper credit be given, because hardly anyone does ([permalink](https://chaim-videogames.itch.io/mikun-pop#post-15508543)).
 
 This project follows that request: credit is given in the README, here, and inside the installable package itself. Two caveats are worth stating plainly rather than glossing over. It is an informal public statement, not a licence. And it comes from Chaim Vester alone, while the artwork is credited to BYP Studio *and* Chaim Videogames — so it does not speak for BYP Studio.
 

@@ -19,6 +19,6 @@ Do not edit these files; `tools/build_codex_pet.py` reads them as-is.
 These files come from two different rights holders and are **not** under a single licence:
 
 - **`*.json`** — part of the MikuPet project by Charles Flowers, distributed under GPL-3.0. Redistributed here unmodified under the same licence; the full text is in [../../LICENSE](../../LICENSE).
-- **`*.png`** — character artwork by **BYP Studio and Chaim Videogames** for *Miku 'n Pop*, obtained via The Spriters Resource. MikuPet credits this artwork to those third parties, so its GPL-3.0 licence does not extend to it. No licence over the artwork is claimed here.
+- **`*.png`** — character artwork by **BYP Studio and Chaim Videogames** for *Miku'n POP*, obtained via The Spriters Resource. MikuPet credits this artwork to those third parties, so its GPL-3.0 licence does not extend to it. No licence over the artwork is claimed here.
 
 Full details, including the modification statement and removal contact, are in [../../ATTRIBUTION.md](../../ATTRIBUTION.md).

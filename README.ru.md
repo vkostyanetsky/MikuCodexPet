@@ -131,7 +131,7 @@ python ~/.codex/skills/hatch-pet/scripts/validate_atlas.py dist/miku/spritesheet
 
 ```text
 Ассеты персонажа:
-BYP Studio и Chaim Videogames — Miku 'n Pop
+BYP Studio и Chaim Videogames — Miku'n POP
 Источник: The Spriters Resource / The VG Resource
 
 Исходный проект спрайтов:
